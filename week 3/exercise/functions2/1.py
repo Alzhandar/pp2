@@ -77,17 +77,24 @@ l = [
 ]
 l1=[]
 #1
-for i in l: 
-    l1.append(i["imdb"])
-for i in l1:
-    if i>5.5:
-        print("True")
-    else:
-        print("False")
+def _imdb(l):
+    for i in l: 
+        l1.append(i["imdb"])
+    for i in l1:
+        if i>5.5:
+            print("True")
+        else:
+            print("False")
+
+print(_imdb(l))
 #2
-for i in l:
-    if i["imdb"]>5.5:
-        print(i["name"])
+def imdb(dict):
+    l = []
+    for i in dict:
+        if i["imdb"]>5.5:
+            l.append(i["name"])
+    return l
+print(imdb(l))
 #3
 a=input()
 for i in l:
@@ -99,9 +106,11 @@ for i in l:
     sum+=i["imdb"]
 print(sum/len(l))
 #5
-rez=0
-s=input()
-for i in l:
-    if i["category"]==a:
-        rez+=i["imdb"]
-print(rez)
+def ImC(Cat):
+    l = []
+    for i,e in enumerate(l):
+        if Cat in e.values():
+            l.append(e['imdb'])
+    return sum(l)/len(l)
+
+print(ImC("Romance"))
