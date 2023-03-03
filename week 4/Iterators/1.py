@@ -1,0 +1,5 @@
+mutuple=("aplle","banana","cherry")
+myit=iter(mutuple)
+print(next(myit))
+print(next(myit))
+print(next(myit))
